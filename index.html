@@ -9,23 +9,32 @@
 
 <body>
   <h1>Pizza Parlore</h1>
-  <h2>Choose a size of your pizza:</h2>
-  <h3>Small - $15, Medium - $20, Large - $25</h3>
-  <img id="small" src="img/pizza.jpg" alt="small pizza image">
-  <img id="medium" src="img/pizza.jpg" alt="meidum pizza image">
-  <img id="large" src="img/pizza.jpg" alt="large pizza image">
-  <h2>Select toppings:</h2>
-  <h3>Each topping adds $2</h3>
-  <img id="ham" src="img/ham.jpg" alt="ham image">
-  <img id="salami" src="img/salami.jpg" alt="salami image">
-  <img id="cheese" src="img/cheese.jpg" alt="cheese image">
-  <img id="mushrooms" src="img/mushrooms.jpg" alt="mushrooms image">
-  <img id="tomatoes" src="img/tomatoes.jpg" alt="tomatoes image">
-  <img id="onions" src="img/onions.jpg" alt="onions image">
-  <br>
-  <br>
-  <br>
-  <button id="finalizeOrder" type="submit">Finalize Order</button><br><br>
+  <div class="row">
+    <div class="column1">
+      <h2>Choose a size of your pizza:</h2>
+      <h3>Small - $15, Medium - $20, Large - $25</h3>
+      <img id="small" src="img/pizza.jpg" alt="small pizza image">
+      <img id="medium" src="img/pizza.jpg" alt="meidum pizza image">
+      <img id="large" src="img/pizza.jpg" alt="large pizza image">
+      <h2>Select toppings:</h2>
+      <h3>Each topping adds $2</h3>
+      <img id="ham" src="img/ham.jpg" alt="ham image">
+      <img id="salami" src="img/salami.jpg" alt="salami image">
+      <img id="cheese" src="img/cheese.jpg" alt="cheese image">
+      <img id="mushrooms" src="img/mushrooms.jpg" alt="mushrooms image">
+      <img id="tomatoes" src="img/tomatoes.jpg" alt="tomatoes image">
+      <img id="onions" src="img/onions.jpg" alt="onions image">
+      <br>
+      <br>
+      <br>
+      <input type="button" id="order" value="Finalize Order"><br><br>
+    </div>
+    
+    <div class="column2">
+      <h2>Order info:</h2>
+      <h3 id="output"></h3>
+    </div>
+  </div>
 </body>
 
 </html>

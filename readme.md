@@ -33,10 +33,15 @@ Copyright (c) _01/27/2023_ _Asia Kaplanyan_
 Describe: Pizza()
 
 Test: "It should return a Pizza object with two properties for toppings and size"
-Code: const myPizza = new Pizza(["medium"], ["anchovies", "pineapple"], ;
-Expected Output: Pizza {size: "medium", toppings: ["anchovies", "pineapple"]}
+Code: let pizzaOrder = new Pizza("small", ["tomatoes", "onions"]);
+Expected Output: Pizza {size: "small", toppings: ["tomatoes", "onions"]}
 
 
 
+Describe: Pizza.prototype.PizzaPrice ()
+
+Test: "It should return an array with prices for pizza size and pizza toppings"
+Code: let price = pizzaOrder.PizzaPrice();
+Expected Output: [0, 0]
 
 

@@ -146,7 +146,10 @@ function onions(event) {
   return price[1];
 }
 
-
+function finalizeOrder(event) {
+  let finalPrice = price[0] + price[1];
+  document.getElementById("output").innerText = "Final cost is $" + finalPrice;
+}
 
 window.addEventListener("load", function () {
   console.log(document.getElementById("small"));
@@ -160,6 +163,6 @@ window.addEventListener("load", function () {
   document.getElementById("tomatoes").addEventListener("click", tomatoes);
   document.getElementById("onions").addEventListener("click", onions);
   document.getElementById("onions").addEventListener("click", onions);
-  document.getElementById("finalizeOrder").addEventListener("submit", finalizeOrder)
+  document.getElementById("order").addEventListener("click", finalizeOrder)
 
 });

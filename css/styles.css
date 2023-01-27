@@ -15,7 +15,17 @@ h3 {
   font-style: italic;
 }
 
-button {
+.column1 {
+  float: left;
+  width: 60%;
+}
+
+.column2 {
+  float: left;
+  width: 40%;
+}
+
+#order {
   background-color: orange;
   border: none;
   color: white;
@@ -28,17 +38,17 @@ button {
 }
 
 #small {
-  width: 7%;
+  width: 14%;
   vertical-align: middle;
   padding-left: 10px;
 }
 
 #medium {
-  width: 12%;
+  width: 24%;
   vertical-align: middle;
 }
 
 #large {
-  width: 15%;
+  width: 30%;
   vertical-align: middle;
 }
