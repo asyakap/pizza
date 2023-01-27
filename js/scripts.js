@@ -6,7 +6,11 @@ function Pizza(size, toppings) {
 }
 
 Pizza.prototype.PizzaPrice = function () {
-  let pizzaPrice = 15;
+  let pizzaPriceSize = 15;
+  let pizzaPriceToppings = 0;
+  let pizzaPrice = [];
+  pizzaPrice.push(pizzaPriceSize);
+  pizzaPrice.push(pizzaPriceToppings);
   return pizzaPrice;
 }; 
 
@@ -18,33 +22,55 @@ console.log(price);
 
 //User Interface Logic
 function smallSize(event) {
-  price = price;
+  priceSize = 15;
   document.getElementById("small").src = "img/pizzachecked.jpg";
   document.getElementById("medium").src = "img/pizza.jpg";
   document.getElementById("large").src = "img/pizza.jpg";
+  price[0] = priceSize;
+  console.log(price[0]);
+  return price[0];
 }
 function mediumSize(event) {
-  price = price + 5; 
+  priceSize = 20; 
   document.getElementById("medium").src = "img/pizzachecked.jpg";
   document.getElementById("small").src = "img/pizza.jpg";
   document.getElementById("large").src = "img/pizza.jpg";
-  console.log(price);
-  return price;
+  price[0] = priceSize;
+  console.log(price[0]);
+  return price[0];
 }
 function largeSize(event) {
-  price = price + 10; 
+  priceSize = 25; 
   document.getElementById("large").src = "img/pizzachecked.jpg";
   document.getElementById("small").src = "img/pizza.jpg";
   document.getElementById("medium").src = "img/pizza.jpg";
-  console.log(price);
-  return price;
+  price[0] = priceSize;
+  console.log(price[0]);
+  return price[0];
 }
 
 function ham(event) {
-  price = price + 2; 
+  priceToppings = price[1] + 2; 
   document.getElementById("ham").src = "img/checkedham.jpg";
-  console.log(price);
-  return price;
+  console.log(priceToppings);
+  price[1] = priceToppings;
+  return price[1];
+}
+
+function salami(event) {
+  priceToppings = price[1] + 2; 
+  document.getElementById("salami").src = "img/checkedSalami.jpg";
+  console.log(priceToppings);
+  price[1] = priceToppings;
+  return price[1];
+}
+
+function cheese(event) {
+  priceToppings = price[1] + 2; 
+  document.getElementById("cheese").src = "img/extraCheese.jpg";
+  console.log(priceToppings);
+  price[1] = priceToppings;
+  return price[1];
 }
 
 
@@ -56,5 +82,6 @@ document.getElementById("small").addEventListener("click", smallSize);
 document.getElementById("medium").addEventListener("click", mediumSize);
 document.getElementById("large").addEventListener("click", largeSize);
 document.getElementById("ham").addEventListener("click", ham);
-
+document.getElementById("salami").addEventListener("click", salami);
+document.getElementById("cheese").addEventListener("click", cheese);
 });
