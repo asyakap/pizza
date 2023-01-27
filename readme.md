@@ -14,7 +14,7 @@ _This webpage takes user's input on pizza size and topings and calculates the pr
 ## Setup/Installation Requirements
 
 * _You need a web browser_
-* _Open the following page from you browser: https://asyakap.github.io/pizza/
+* _Open the following page from you browser: https://asyakap.github.io/pizza/_
 
 
 ## Known Bugs

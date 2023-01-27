@@ -9,6 +9,12 @@ h2 {
   font-size: 40px;
 }
 
+h3 {
+  padding-left: 40px;
+  font-size: 30px;
+  font-style: italic;
+}
+
 #small {
   width: 7%;
   vertical-align: middle;
