@@ -13,20 +13,28 @@ Pizza.prototype.PizzaPrice = function () {
 
 let pizzaOrder = new Pizza(0, []);
 console.log(pizzaOrder);
-let pizzaPrice = pizzaOrder.PizzaPrice();
-console.log(pizzaPrice);
+let price = pizzaOrder.PizzaPrice();
+console.log(price);
 
 //User Interface Logic
-function smallSize(pizzaPrice, event) {
-  pizzaPrice = pizzaPrice;
+function smallSize(event) {
+  let pizzaPrice = price;
+  document.getElementById("small").src = "img/pizzachecked.jpg";
+  document.getElementById("medium").src = "img/pizza.jpg";
+  document.getElementById("large").src = "img/pizza.jpg";
+}
+function mediumSize(event) {
+  let pizzaPrice = price + 5; 
+  document.getElementById("medium").src = "img/pizzachecked.jpg";
+  document.getElementById("small").src = "img/pizza.jpg";
+  document.getElementById("large").src = "img/pizza.jpg";
   console.log(pizzaPrice);
 }
-function mediumSize(pizzaPrice, event) {
-  pizzaPrice = pizzaPrice + 5; 
-  console.log(pizzaPrice);
-}
-function largeSize(pizzaPrice, event) {
-  pizzaPrice = pizzaPrice + 10; 
+function largeSize(event) {
+  let pizzaPrice = price + 10; 
+  document.getElementById("large").src = "img/pizzachecked.jpg";
+  document.getElementById("small").src = "img/pizza.jpg";
+  document.getElementById("medium").src = "img/pizza.jpg";
   console.log(pizzaPrice);
 }
 
