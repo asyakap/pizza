@@ -172,7 +172,10 @@ function finalizeOrder(event) {
 let count = 0;
 function orderMore(event) {
   if (price[0] === 0) {
-    document.getElementById("output1").innerText = "Please Select Pizza Size!"
+    count += 1;
+    id = "output" + count;
+    document.getElementById(id).innerText = "Please Select Pizza Size!"
+    count -= 1;
   }
   else {
     pizzaList.push(price);
