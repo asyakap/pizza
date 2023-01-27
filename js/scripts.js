@@ -6,7 +6,7 @@ function Pizza(size, toppings) {
 }
 
 Pizza.prototype.PizzaPrice = function () {
-  let pizzaPriceSize = 15;
+  let pizzaPriceSize = 0;
   let pizzaPriceToppings = 0;
   let pizzaPrice = [];
   let toppings = [];
@@ -21,6 +21,7 @@ let pizzaOrder = new Pizza(0, []);
 console.log(pizzaOrder);
 let price = pizzaOrder.PizzaPrice();
 console.log(price);
+let pizzaList = [];
 
 //User Interface Logic
 function smallSize(event) {
@@ -158,17 +159,38 @@ function onions(event) {
   return price[1];
 }
 
+
 function finalizeOrder(event) {
-  console.log(price[2]);
-  let finalPrice = price[0] + price[1];
-  if (price[2].length === 0) {
-    document.getElementById("output").innerText = "Final cost is $" + finalPrice + ". You ordered a " + pizzaOrder.size + " pizza.";
-  } else {
-    document.getElementById("output").innerText = "Final cost is $" + finalPrice + ". You ordered a " + pizzaOrder.size + " pizza with " + price[2] + ".";
-  }
+  let finalPrice = 0;
+pizzaList.forEach(function(element) {
+  finalPrice += element[0] + element[1];
+})
+document.getElementById("finalCheck").innerText = "Your order total is $" + finalPrice;
 }
 
+let count = 0;
 function orderMore(event) {
+  console.log(price[2]);
+  pizzaList.push(price);
+  let finalPrice = price[0] + price[1];
+  count += 1;
+  id = "output" + count;
+  if (price[2].length === 0) {
+    document.getElementById(id).innerText = count + ") " + pizzaOrder.size + " pizza. - $" + finalPrice;
+  } else {
+    document.getElementById(id).innerText = count + ") " + pizzaOrder.size + " pizza with " + price[2] + " - $" + finalPrice;
+  }
+
+  finalPrice = 0;
+  price = [0, 0, []];
+  pizzaOrder.size = [];
+  hamTimesClicked = 0;
+  salamiTimesClicked = 0;
+  cheeseTimesClicked = 0;
+  mushroomsTimesClicked = 0;
+  tomatoesTimesClicked = 0;
+  onionsTimesClicked = 0;
+  console.log(pizzaList);
   document.getElementById("small").src = "img/pizza.jpg";
   document.getElementById("medium").src = "img/pizza.jpg";
   document.getElementById("large").src = "img/pizza.jpg";
@@ -181,7 +203,6 @@ function orderMore(event) {
 }
 
 window.addEventListener("load", function () {
-  console.log(document.getElementById("small"));
   document.getElementById("small").addEventListener("click", smallSize);
   document.getElementById("medium").addEventListener("click", mediumSize);
   document.getElementById("large").addEventListener("click", largeSize);
