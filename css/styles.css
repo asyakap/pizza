@@ -1,0 +1,25 @@
+h1 {
+  text-align: center;
+  color: orange;
+  font-size: 80px;
+}
+
+h2 {
+  padding-left: 40px;
+}
+
+.small {
+  width: 7%;
+  vertical-align: middle;
+  padding-left: 10px;
+}
+
+.medium {
+  width: 12%;
+  vertical-align: middle;
+}
+
+.large {
+  width: 15%;
+  vertical-align: middle;
+}
