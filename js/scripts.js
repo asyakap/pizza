@@ -114,7 +114,7 @@ function mushrooms(event) {
   mushroomsTimesClicked += 1;
   if (mushroomsTimesClicked % 2 == 0) {
     priceToppings = price[1] - 2;
-    document.getElementById("mushrooms").src = "img/mushrooms.jpg";
+    document.getElementById("mushrooms").src = "img/Mushrooms.jpg";
   }
   else {
     document.getElementById("mushrooms").src = "img/mushroomsChecked.jpg";
