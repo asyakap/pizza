@@ -162,43 +162,47 @@ function onions(event) {
 
 function finalizeOrder(event) {
   let finalPrice = 0;
-pizzaList.forEach(function(element) {
-  finalPrice += element[0] + element[1];
-})
-document.getElementById("finalCheck").innerText = "Your order total is $" + finalPrice;
-document.getElementById("hidden").style.display = "block";
+  pizzaList.forEach(function (element) {
+    finalPrice += element[0] + element[1];
+  })
+  document.getElementById("finalCheck").innerText = "Your order total is $" + finalPrice;
+  document.getElementById("hidden").style.display = "block";
 }
 
 let count = 0;
 function orderMore(event) {
-  console.log(price[2]);
-  pizzaList.push(price);
-  let finalPrice = price[0] + price[1];
-  count += 1;
-  id = "output" + count;
-  if (price[2].length === 0) {
-    document.getElementById(id).innerText = count + ") " + pizzaOrder.size + " pizza. - $" + finalPrice;
-  } else {
-    document.getElementById(id).innerText = count + ") " + pizzaOrder.size + " pizza with " + price[2] + " - $" + finalPrice;
+  if (price[0] === 0) {
+    document.getElementById("output1").innerText = "Please Select Pizza Size!"
   }
-  finalPrice = 0;
-  price = [0, 0, []];
-  pizzaOrder.size = [];
-  hamTimesClicked = 0;
-  salamiTimesClicked = 0;
-  cheeseTimesClicked = 0;
-  mushroomsTimesClicked = 0;
-  tomatoesTimesClicked = 0;
-  onionsTimesClicked = 0;
-  document.getElementById("small").src = "img/pizza.jpg";
-  document.getElementById("medium").src = "img/pizza.jpg";
-  document.getElementById("large").src = "img/pizza.jpg";
-  document.getElementById("ham").src = "img/ham.jpg";
-  document.getElementById("salami").src = "img/salami.jpg";
-  document.getElementById("cheese").src = "img/cheese.jpg";
-  document.getElementById("mushrooms").src = "img/mushrooms.jpg";
-  document.getElementById("tomatoes").src = "img/tomatoes.jpg";
-  document.getElementById("onions").src = "img/onions.jpg";
+  else {
+    pizzaList.push(price);
+    let finalPrice = price[0] + price[1];
+    count += 1;
+    id = "output" + count;
+    if (price[2].length === 0) {
+      document.getElementById(id).innerText = count + ") " + pizzaOrder.size + " pizza. - $" + finalPrice;
+    } else {
+      document.getElementById(id).innerText = count + ") " + pizzaOrder.size + " pizza with " + price[2] + " - $" + finalPrice;
+    }
+    finalPrice = 0;
+    price = [0, 0, []];
+    pizzaOrder.size = [];
+    hamTimesClicked = 0;
+    salamiTimesClicked = 0;
+    cheeseTimesClicked = 0;
+    mushroomsTimesClicked = 0;
+    tomatoesTimesClicked = 0;
+    onionsTimesClicked = 0;
+    document.getElementById("small").src = "img/pizza.jpg";
+    document.getElementById("medium").src = "img/pizza.jpg";
+    document.getElementById("large").src = "img/pizza.jpg";
+    document.getElementById("ham").src = "img/ham.jpg";
+    document.getElementById("salami").src = "img/salami.jpg";
+    document.getElementById("cheese").src = "img/cheese.jpg";
+    document.getElementById("mushrooms").src = "img/mushrooms.jpg";
+    document.getElementById("tomatoes").src = "img/tomatoes.jpg";
+    document.getElementById("onions").src = "img/onions.jpg";
+  }
 }
 
 function success() {
