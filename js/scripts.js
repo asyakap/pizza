@@ -9,8 +9,10 @@ Pizza.prototype.PizzaPrice = function () {
   let pizzaPriceSize = 15;
   let pizzaPriceToppings = 0;
   let pizzaPrice = [];
+  let toppings = [];
   pizzaPrice.push(pizzaPriceSize);
   pizzaPrice.push(pizzaPriceToppings);
+  pizzaPrice.push(toppings);
   return pizzaPrice;
 };
 
@@ -27,6 +29,7 @@ function smallSize(event) {
   document.getElementById("medium").src = "img/pizza.jpg";
   document.getElementById("large").src = "img/pizza.jpg";
   price[0] = priceSize;
+  pizzaOrder.size = "small";
   console.log(price[0]);
   return price[0];
 }
@@ -36,6 +39,7 @@ function mediumSize(event) {
   document.getElementById("small").src = "img/pizza.jpg";
   document.getElementById("large").src = "img/pizza.jpg";
   price[0] = priceSize;
+  pizzaOrder.size = "medium";
   console.log(price[0]);
   return price[0];
 }
@@ -45,12 +49,14 @@ function largeSize(event) {
   document.getElementById("small").src = "img/pizza.jpg";
   document.getElementById("medium").src = "img/pizza.jpg";
   price[0] = priceSize;
+  pizzaOrder.size = "large";
   console.log(price[0]);
   return price[0];
 }
 
 let hamTimesClicked = 0;
 function ham(event) {
+  priceToppings = price[1] + 2;
   hamTimesClicked += 1;
   console.log(hamTimesClicked);
   if (hamTimesClicked % 2 == 0) {
@@ -58,8 +64,9 @@ function ham(event) {
     document.getElementById("ham").src = "img/ham.jpg";
   }
   else {
-    priceToppings = price[1] + 2;
+
     document.getElementById("ham").src = "img/checkedham.jpg";
+    price[2].push(" ham");
   }
   console.log(priceToppings);
   price[1] = priceToppings;
@@ -68,14 +75,15 @@ function ham(event) {
 
 let salamiTimesClicked = 0;
 function salami(event) {
+  priceToppings = price[1] + 2;
   salamiTimesClicked += 1;
   if (salamiTimesClicked % 2 == 0) {
     priceToppings = price[1] - 2;
     document.getElementById("salami").src = "img/salami.jpg";
   }
   else {
-    priceToppings = price[1] + 2;
     document.getElementById("salami").src = "img/checkedSalami.jpg";
+    price[2].push(" salami");
   }
   console.log(priceToppings);
   price[1] = priceToppings;
@@ -84,14 +92,15 @@ function salami(event) {
 
 let cheeseTimesClicked = 0;
 function cheese(event) {
+  priceToppings = price[1] + 2;
   cheeseTimesClicked += 1;
   if (cheeseTimesClicked % 2 == 0) {
     priceToppings = price[1] - 2;
     document.getElementById("cheese").src = "img/cheese.jpg";
   }
   else {
-    priceToppings = price[1] + 2;
     document.getElementById("cheese").src = "img/extraCheese.jpg";
+    price[2].push(" extra cheese");
   }
   console.log(priceToppings);
   price[1] = priceToppings;
@@ -108,6 +117,7 @@ function mushrooms(event) {
   }
   else {
     document.getElementById("mushrooms").src = "img/mushroomsChecked.jpg";
+    price[2].push(" mushrooms");
   }
   console.log(priceToppings);
   price[1] = priceToppings;
@@ -124,6 +134,7 @@ function tomatoes(event) {
   }
   else {
     document.getElementById("tomatoes").src = "img/checkedTomatoes.jpg";
+    price[2].push(" tomatoes");
   }
   console.log(priceToppings);
   price[1] = priceToppings;
@@ -140,6 +151,7 @@ function onions(event) {
   }
   else {
     document.getElementById("onions").src = "img/onionsChecked.jpg";
+    price[2].push(" onions");
   }
   console.log(priceToppings);
   price[1] = priceToppings;
@@ -147,8 +159,9 @@ function onions(event) {
 }
 
 function finalizeOrder(event) {
+  console.log(pizzaOrder.toppins);
   let finalPrice = price[0] + price[1];
-  document.getElementById("output").innerText = "Final cost is $" + finalPrice;
+  document.getElementById("output").innerText = "Final cost is $" + finalPrice +". It is " + pizzaOrder.size + " and contains " + price[2];
 }
 
 window.addEventListener("load", function () {
