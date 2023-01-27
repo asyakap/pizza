@@ -199,7 +199,7 @@ function orderMore(event) {
     document.getElementById("ham").src = "img/ham.jpg";
     document.getElementById("salami").src = "img/salami.jpg";
     document.getElementById("cheese").src = "img/cheese.jpg";
-    document.getElementById("mushrooms").src = "img/mushrooms.jpg";
+    document.getElementById("mushrooms").src = "img/Mushrooms.jpg";
     document.getElementById("tomatoes").src = "img/tomatoes.jpg";
     document.getElementById("onions").src = "img/onions.jpg";
   }
