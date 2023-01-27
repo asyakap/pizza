@@ -66,7 +66,7 @@ function ham(event) {
   }
   else {
 
-    document.getElementById("ham").src = "img/checkedham.jpg";
+    document.getElementById("ham").src = "img/checkedHam.jpg";
     price[2].push(" ham");
   }
   console.log(priceToppings);
