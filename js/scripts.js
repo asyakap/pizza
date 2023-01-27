@@ -63,6 +63,7 @@ function ham(event) {
   if (hamTimesClicked % 2 == 0) {
     priceToppings = price[1] - 2;
     document.getElementById("ham").src = "img/ham.jpg";
+    price[2].pop(" ham");
   }
   else {
 
@@ -81,6 +82,7 @@ function salami(event) {
   if (salamiTimesClicked % 2 == 0) {
     priceToppings = price[1] - 2;
     document.getElementById("salami").src = "img/salami.jpg";
+    price[2].pop(" salami");
   }
   else {
     document.getElementById("salami").src = "img/checkedSalami.jpg";
@@ -98,6 +100,7 @@ function cheese(event) {
   if (cheeseTimesClicked % 2 == 0) {
     priceToppings = price[1] - 2;
     document.getElementById("cheese").src = "img/cheese.jpg";
+    price[2].pop(" extra cheese");
   }
   else {
     document.getElementById("cheese").src = "img/extraCheese.jpg";
@@ -115,6 +118,7 @@ function mushrooms(event) {
   if (mushroomsTimesClicked % 2 == 0) {
     priceToppings = price[1] - 2;
     document.getElementById("mushrooms").src = "img/Mushrooms.jpg";
+    price[2].pop(" mushrooms");
   }
   else {
     document.getElementById("mushrooms").src = "img/mushroomsChecked.jpg";
@@ -132,6 +136,7 @@ function tomatoes(event) {
   if (tomatoesTimesClicked % 2 == 0) {
     priceToppings = price[1] - 2;
     document.getElementById("tomatoes").src = "img/tomatoes.jpg";
+    price[2].pop(" tomatoes");
   }
   else {
     document.getElementById("tomatoes").src = "img/checkedTomatoes.jpg";
@@ -149,6 +154,7 @@ function onions(event) {
   if (onionsTimesClicked % 2 == 0) {
     priceToppings = price[1] - 2;
     document.getElementById("onions").src = "img/onions.jpg";
+    price[2].pop(" onions");
   }
   else {
     document.getElementById("onions").src = "img/onionsChecked.jpg";
@@ -183,7 +189,7 @@ function orderMore(event) {
     count += 1;
     id = "output" + count;
     if (price[2].length === 0) {
-      document.getElementById(id).innerText = count + ") " + pizzaOrder.size + " pizza. - $" + finalPrice;
+      document.getElementById(id).innerText = count + ") " + pizzaOrder.size + " pizza - $" + finalPrice;
     } else {
       document.getElementById(id).innerText = count + ") " + pizzaOrder.size + " pizza with " + price[2] + " - $" + finalPrice;
     }
