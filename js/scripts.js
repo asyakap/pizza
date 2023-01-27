@@ -114,6 +114,37 @@ function mushrooms(event) {
   return price[1];
 }
 
+let tomatoesTimesClicked = 0;
+function tomatoes(event) {
+  priceToppings = price[1] + 2;
+  tomatoesTimesClicked += 1;
+  if (tomatoesTimesClicked % 2 == 0) {
+    priceToppings = price[1] - 2;
+    document.getElementById("tomatoes").src = "img/tomatoes.jpg";
+  }
+  else {
+    document.getElementById("tomatoes").src = "img/checkedTomatoes.jpg";
+  }
+  console.log(priceToppings);
+  price[1] = priceToppings;
+  return price[1];
+}
+
+let onionsTimesClicked = 0;
+function onions(event) {
+  priceToppings = price[1] + 2;
+  onionsTimesClicked += 1;
+  if (onionsTimesClicked % 2 == 0) {
+    priceToppings = price[1] - 2;
+    document.getElementById("onions").src = "img/onions.jpg";
+  }
+  else {
+    document.getElementById("onions").src = "img/onionsChecked.jpg";
+  }
+  console.log(priceToppings);
+  price[1] = priceToppings;
+  return price[1];
+}
 
 
 
@@ -126,4 +157,9 @@ window.addEventListener("load", function () {
   document.getElementById("salami").addEventListener("click", salami);
   document.getElementById("cheese").addEventListener("click", cheese);
   document.getElementById("mushrooms").addEventListener("click", mushrooms);
+  document.getElementById("tomatoes").addEventListener("click", tomatoes);
+  document.getElementById("onions").addEventListener("click", onions);
+  document.getElementById("onions").addEventListener("click", onions);
+  document.getElementById("finalizeOrder").addEventListener("submit", finalizeOrder)
+
 });
