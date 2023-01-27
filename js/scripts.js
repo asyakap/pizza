@@ -166,6 +166,7 @@ pizzaList.forEach(function(element) {
   finalPrice += element[0] + element[1];
 })
 document.getElementById("finalCheck").innerText = "Your order total is $" + finalPrice;
+document.getElementById("hidden").style.display = "block";
 }
 
 let count = 0;
@@ -180,7 +181,6 @@ function orderMore(event) {
   } else {
     document.getElementById(id).innerText = count + ") " + pizzaOrder.size + " pizza with " + price[2] + " - $" + finalPrice;
   }
-
   finalPrice = 0;
   price = [0, 0, []];
   pizzaOrder.size = [];
@@ -190,7 +190,6 @@ function orderMore(event) {
   mushroomsTimesClicked = 0;
   tomatoesTimesClicked = 0;
   onionsTimesClicked = 0;
-  console.log(pizzaList);
   document.getElementById("small").src = "img/pizza.jpg";
   document.getElementById("medium").src = "img/pizza.jpg";
   document.getElementById("large").src = "img/pizza.jpg";
@@ -200,6 +199,11 @@ function orderMore(event) {
   document.getElementById("mushrooms").src = "img/mushrooms.jpg";
   document.getElementById("tomatoes").src = "img/tomatoes.jpg";
   document.getElementById("onions").src = "img/onions.jpg";
+}
+
+function success() {
+  document.getElementById("hangon").innerText = "Hang on, your pizza is on the way!"
+  document.getElementById("delivery").src = "img/delivery.gif"
 }
 
 window.addEventListener("load", function () {
@@ -215,5 +219,6 @@ window.addEventListener("load", function () {
   document.getElementById("onions").addEventListener("click", onions);
   document.getElementById("order").addEventListener("click", finalizeOrder);
   document.getElementById("orderMore").addEventListener("click", orderMore);
+  document.getElementById("order1").addEventListener("click", success);
 
 });
