@@ -6,20 +6,21 @@ h1 {
 
 h2 {
   padding-left: 40px;
+  font-size: 40px;
 }
 
-.small {
+#small {
   width: 7%;
   vertical-align: middle;
   padding-left: 10px;
 }
 
-.medium {
+#medium {
   width: 12%;
   vertical-align: middle;
 }
 
-.large {
+#large {
   width: 15%;
   vertical-align: middle;
 }
