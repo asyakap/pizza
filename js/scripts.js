@@ -159,9 +159,25 @@ function onions(event) {
 }
 
 function finalizeOrder(event) {
-  console.log(pizzaOrder.toppins);
+  console.log(price[2]);
   let finalPrice = price[0] + price[1];
-  document.getElementById("output").innerText = "Final cost is $" + finalPrice +". It is " + pizzaOrder.size + " and contains " + price[2];
+  if (price[2].length === 0) {
+    document.getElementById("output").innerText = "Final cost is $" + finalPrice + ". You ordered a " + pizzaOrder.size + " pizza.";
+  } else {
+    document.getElementById("output").innerText = "Final cost is $" + finalPrice + ". You ordered a " + pizzaOrder.size + " pizza with " + price[2] + ".";
+  }
+}
+
+function orderMore(event) {
+  document.getElementById("small").src = "img/pizza.jpg";
+  document.getElementById("medium").src = "img/pizza.jpg";
+  document.getElementById("large").src = "img/pizza.jpg";
+  document.getElementById("ham").src = "img/ham.jpg";
+  document.getElementById("salami").src = "img/salami.jpg";
+  document.getElementById("cheese").src = "img/cheese.jpg";
+  document.getElementById("mushrooms").src = "img/mushrooms.jpg";
+  document.getElementById("tomatoes").src = "img/tomatoes.jpg";
+  document.getElementById("onions").src = "img/onions.jpg";
 }
 
 window.addEventListener("load", function () {
@@ -176,6 +192,7 @@ window.addEventListener("load", function () {
   document.getElementById("tomatoes").addEventListener("click", tomatoes);
   document.getElementById("onions").addEventListener("click", onions);
   document.getElementById("onions").addEventListener("click", onions);
-  document.getElementById("order").addEventListener("click", finalizeOrder)
+  document.getElementById("order").addEventListener("click", finalizeOrder);
+  document.getElementById("orderMore").addEventListener("click", orderMore);
 
 });

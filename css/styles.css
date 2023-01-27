@@ -37,6 +37,18 @@ h3 {
   margin-left: 40px;
 }
 
+#orderMore {
+  background-color: orange;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-left: 40px;
+}
+
 #small {
   width: 14%;
   vertical-align: middle;
