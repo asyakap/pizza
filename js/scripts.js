@@ -18,9 +18,7 @@ Pizza.prototype.PizzaPrice = function () {
 
 
 let pizzaOrder = new Pizza(0, []);
-console.log(pizzaOrder);
 let price = pizzaOrder.PizzaPrice();
-console.log(price);
 let pizzaList = [];
 
 //User Interface Logic
@@ -31,7 +29,6 @@ function smallSize(event) {
   document.getElementById("large").src = "img/pizza.jpg";
   price[0] = priceSize;
   pizzaOrder.size = "small";
-  console.log(price[0]);
   return price[0];
 }
 function mediumSize(event) {
@@ -41,7 +38,6 @@ function mediumSize(event) {
   document.getElementById("large").src = "img/pizza.jpg";
   price[0] = priceSize;
   pizzaOrder.size = "medium";
-  console.log(price[0]);
   return price[0];
 }
 function largeSize(event) {
@@ -51,7 +47,6 @@ function largeSize(event) {
   document.getElementById("medium").src = "img/pizza.jpg";
   price[0] = priceSize;
   pizzaOrder.size = "large";
-  console.log(price[0]);
   return price[0];
 }
 
@@ -59,18 +54,17 @@ let hamTimesClicked = 0;
 function ham(event) {
   priceToppings = price[1] + 2;
   hamTimesClicked += 1;
-  console.log(hamTimesClicked);
   if (hamTimesClicked % 2 == 0) {
     priceToppings = price[1] - 2;
     document.getElementById("ham").src = "img/ham.jpg";
-    price[2].pop(" ham");
+    let indexHam = price[2].indexOf(" ham");
+    price[2].splice(indexHam, 1);
   }
   else {
 
     document.getElementById("ham").src = "img/checkedHam.jpg";
     price[2].push(" ham");
   }
-  console.log(priceToppings);
   price[1] = priceToppings;
   return price[1];
 }
@@ -82,13 +76,13 @@ function salami(event) {
   if (salamiTimesClicked % 2 == 0) {
     priceToppings = price[1] - 2;
     document.getElementById("salami").src = "img/salami.jpg";
-    price[2].pop(" salami");
+    let indexSalami = price[2].indexOf(" salami");
+    price[2].splice(indexSalami, 1);
   }
   else {
     document.getElementById("salami").src = "img/checkedSalami.jpg";
     price[2].push(" salami");
   }
-  console.log(priceToppings);
   price[1] = priceToppings;
   return price[1];
 }
@@ -100,13 +94,13 @@ function cheese(event) {
   if (cheeseTimesClicked % 2 == 0) {
     priceToppings = price[1] - 2;
     document.getElementById("cheese").src = "img/cheese.jpg";
-    price[2].pop(" extra cheese");
+    let indexCheese = price[2].indexOf(" extra cheese");
+    price[2].splice(indexCheese, 1);
   }
   else {
     document.getElementById("cheese").src = "img/extraCheese.jpg";
     price[2].push(" extra cheese");
   }
-  console.log(priceToppings);
   price[1] = priceToppings;
   return price[1];
 }
@@ -118,13 +112,13 @@ function mushrooms(event) {
   if (mushroomsTimesClicked % 2 == 0) {
     priceToppings = price[1] - 2;
     document.getElementById("mushrooms").src = "img/Mushrooms.jpg";
-    price[2].pop(" mushrooms");
+    let indexMushroom = price[2].indexOf(" mushrooms");
+    price[2].splice(indexMushroom, 1);
   }
   else {
     document.getElementById("mushrooms").src = "img/mushroomsChecked.jpg";
     price[2].push(" mushrooms");
   }
-  console.log(priceToppings);
   price[1] = priceToppings;
   return price[1];
 }
@@ -136,13 +130,13 @@ function tomatoes(event) {
   if (tomatoesTimesClicked % 2 == 0) {
     priceToppings = price[1] - 2;
     document.getElementById("tomatoes").src = "img/tomatoes.jpg";
-    price[2].pop(" tomatoes");
+    let indexTomato = price[2].indexOf(" tomatoes");
+    price[2].splice(indexTomato, 1);
   }
   else {
     document.getElementById("tomatoes").src = "img/checkedTomatoes.jpg";
     price[2].push(" tomatoes");
   }
-  console.log(priceToppings);
   price[1] = priceToppings;
   return price[1];
 }
@@ -154,13 +148,13 @@ function onions(event) {
   if (onionsTimesClicked % 2 == 0) {
     priceToppings = price[1] - 2;
     document.getElementById("onions").src = "img/onions.jpg";
-    price[2].pop(" onions");
+    let indexOnion = price[2].indexOf(" onions");
+    price[2].splice(indexOnion, 1);
   }
   else {
     document.getElementById("onions").src = "img/onionsChecked.jpg";
     price[2].push(" onions");
   }
-  console.log(priceToppings);
   price[1] = priceToppings;
   return price[1];
 }
